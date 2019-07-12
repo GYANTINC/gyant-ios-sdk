@@ -25,7 +25,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 Add GyantChatSDK pod to your app target.
 
 ```
-pod 'GyantChatSDK', '~> 1.0.2'
+pod 'GyantChatSDK'
 ```
 
 Install the pod.
@@ -33,6 +33,26 @@ Install the pod.
 ```
 pod install
 ```
+
+**Note** GyantChatSDK is a device-only framework.
+
+## Development Builds
+
+GyantChatSDK is a device only framework. To enable developers to test their integration in the simulator a custom pod is available. Note that for production builds you should never use this version. The following Podfile changes will integrate the dev version only for the Debug configuration while keeping the production version for the Release configuration.
+
+Add GyantChatSDK pod to your app target.
+
+```
+pod 'GyantChatSDK-dev', :configurations => ['Debug']
+pod 'GyantChatSDK', :configurations => ['Release']
+```
+
+Install both pods.
+
+```
+pod install
+```
+
 
 ## Disable Bitcode
 
@@ -97,5 +117,6 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
 ## Include the SDK for iOS in an Existing Application
 
 The [samples](https://github.com/GYANTINC/gyant-ios-sdk-samples) included with the SDK for iOS are standalone projects that are already set up for you. You can also integrate the SDK for iOS with your own existing project.
+
 
 **Copyright © 2019 GYANT.com, Inc. All rights reserved.**
