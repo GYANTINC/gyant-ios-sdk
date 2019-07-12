@@ -13,6 +13,12 @@ GYANT combines messaging, AI, and medical experts to radically improve the diagn
 
 # Setup using CocoaPods 
 
+Add Gyant repo:
+
+```
+pod repo add gyant-podspecs git@github.com:GYANTINC/gyant-podspecs.git
+```
+
 Add Gyant Specs source to your Podfile in the following order:
 
 ```
