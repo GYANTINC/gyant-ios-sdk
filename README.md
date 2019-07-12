@@ -65,7 +65,7 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
 2. Start the SDK by adding the following code snippet in the `application:didFinishLaunchingWithOptions:` application delegate method.
 
     ```swift
-    GyantChat.start(withClientID: "<YOUR-CLIENT-ID>", andPatientID: "<YOUR-PATIENT-ID-OPTIONAL>", andIsDev: true)
+    GyantChat.start(withClientID: "<YOUR-CLIENT-ID>", patientID: "<YOUR-PATIENT-ID-OPTIONAL>", isDev: true)
     ```
     
     **Note**: The andIsDev parameter must be changed to false before submitting the app to production. 
@@ -88,7 +88,7 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
 2. Start the SDK by adding the following code snippet in the `application:didFinishLaunchingWithOptions:` application delegate method.
 
     ```objective-c
-    [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>" andPatientID:@"<YOUR-PATIENT-ID-OPTIONAL>" andIsDev:YES];
+    [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>" patientID:@"<YOUR-PATIENT-ID-OPTIONAL>" isDev:YES];
     ```
     
     **Note**: The andIsDev parameter must be changed to false before submitting the app to production.
