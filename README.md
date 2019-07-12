@@ -38,7 +38,7 @@ pod install
 
 ## Development Builds
 
-GyantChatSDK is a device only framework. To enable developers to test their integration in the simulator a custom pod is available. Note that for production builds you should never use this version. The following Podfile changes will integrate the dev version only for the Debug configuration while keeping the production version for the Release configuration.
+GyantChatSDK is a device only framework. To enable developers to test their integration in the simulator a custom pod is available where x86_64 arch is included. Note that for production builds you should never use this version. The following Podfile changes will integrate the dev version only for the Debug configuration while keeping the production version for the Release configuration.
 
 Add GyantChatSDK pod to your app target.
 
