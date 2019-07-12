@@ -34,26 +34,6 @@ Install the pod.
 pod install
 ```
 
-**Note** GyantChatSDK is a device-only framework.
-
-## Development Builds
-
-GyantChatSDK is a device only framework. To enable developers to test their integration in the simulator a custom pod is available where x86_64 arch is included. Note that for production builds you should never use this version. The following Podfile changes will integrate the dev version only for the Debug configuration while keeping the production version for the Release configuration.
-
-Add GyantChatSDK pod to your app target.
-
-```
-pod 'GyantChatSDK-dev', :configurations => ['Debug']
-pod 'GyantChatSDK', :configurations => ['Release']
-```
-
-Install both pods.
-
-```
-pod install
-```
-
-
 ## Disable Bitcode
 
 GyantChatSDK does not offer bitcode compatibility for now.
