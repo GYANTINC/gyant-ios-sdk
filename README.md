@@ -31,7 +31,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 Add GyantChatSDK pod to your app target.
 
 ```
-pod 'GyantChatSDK', '~> 1.0.5'
+pod 'GyantChatSDK', '~> 1.0.6'
 ```
 
 Install the pod.
