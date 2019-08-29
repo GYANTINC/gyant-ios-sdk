@@ -106,7 +106,7 @@ The [samples](https://github.com/GYANTINC/gyant-ios-sdk-samples) included with t
 
 ## Theme Configuration
 
-To allow a more seamless integration into existing apps the SDK supports custom themes. For each theme the following RGB colours could be customized:
+To allow a more seamless integration into existing apps the SDK supports custom themes. Currently, two themes are available: bot and provider. For each theme the following RGB colours could be customized:
 
 | Name            	| Description                                                                                                                                                                                           	| bot       	| provider  	|
 |-----------------	|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|-----------	|-----------	|
