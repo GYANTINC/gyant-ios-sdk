@@ -65,7 +65,7 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
 2. Start the SDK by adding the following code snippet in the `application:didFinishLaunchingWithOptions:` application delegate method.
 
     ```swift
-    GyantChat.start(withClientID: "<YOUR-CLIENT-ID>", patientID: "<YOUR-PATIENT-ID-OPTIONAL>", isDev: true)
+    GyantChat.start(withClientID: "<YOUR-CLIENT-ID>", patientID: "<YOUR-PATIENT-ID-OPTIONAL>", isDev: true, theme: nil)
     ```
     
     **Note**: The andIsDev parameter must be changed to false before submitting the app to production. 
@@ -88,7 +88,7 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
 2. Start the SDK by adding the following code snippet in the `application:didFinishLaunchingWithOptions:` application delegate method.
 
     ```objective-c
-    [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>" patientID:@"<YOUR-PATIENT-ID-OPTIONAL>" isDev:YES];
+    [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>" patientID:@"<YOUR-PATIENT-ID-OPTIONAL>" isDev:YES theme:@{}];
     ```
     
     **Note**: The andIsDev parameter must be changed to false before submitting the app to production.
@@ -103,6 +103,25 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
 ## Include the SDK for iOS in an Existing Application
 
 The [samples](https://github.com/GYANTINC/gyant-ios-sdk-samples) included with the SDK for iOS are standalone projects that are already set up for you. You can also integrate the SDK for iOS with your own existing project.
+
+## Theme Configuration
+
+To allow a more seamless integration into existing apps the SDK supports custom themes. For each theme the following RGBA colours could be customized:
+| Name            | Description                                                                                                                                                                                           | bot       | provider  |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|-----------|
+|  primaryColor1  | - Background color - Auto-complete matches highlight text color - Hyperlink text color                                                                                                                | ff4cb9f7  | ff1f5075  |
+| primaryColor2   | - Clinic and Provider cards text color                                                                                                                                                                | ff3ea9f5  | ff3ea9f5  |
+| primaryColor3   | n/a                                                                                                                                                                                                   |           |           |
+| primaryColor4   | - QuickResponses bubble background color - Input box background color - User bubble background color                                                                                                  | ff79c7ff  | ff296a9c  |
+| secondaryColor1 | - Auto-complete list background color - Connecting indicator background color - Scroll to bottom button icon color - Send button enabled icon color - Input box cursor color - Undo button icon color | ffffffff  | ffffffff  |
+| secondaryColor2 | - Success notification background color                                                                                                                                                               | ff4cd964  | ff4cd964  |
+| secondaryColor3 | - Error notification background color                                                                                                                                                                 | fff55040  | fff55040  |
+| secondaryColor4 | - Provider bubble background color                                                                                                                                                                    | ffff79c7  |  ff62849e |
+| extraColor1     | - Card title text color - Connecting indicator text color - Auto-complete non-matches text color                                                                                                      | ff13324a  | ff0f77c6  |
+| extraColor2     | - Card subtitle text color                                                                                                                                                                            |  ff767676 | ff767676  |
+| extraColor3     | - Send button disabled icon color                                                                                                                                                                     | ffaaaaaa  | ffaaaaaa  |
+| extraColor4     | n/a                                                                                                                                                                                                   |           |           |
+| extraColor5     | - Scroll to bottom button background color - Send button background color                                                                                                                             | ff13324a  | ff13324a  |
 
 
 **Copyright © 2019 GYANT.com, Inc. All rights reserved.**
