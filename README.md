@@ -72,7 +72,7 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
                     theme: nil)
     ```
     
-    or, if you want to change default colors:
+    or, if you want to change the chat view appearance:
     
      ```swift
      let botPalette = ["primaryColor1":"ff0000"]
@@ -84,7 +84,7 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
                      isDev: true)
     ```
     
-    For more details about theme configuration read [here](#theme-configuration)
+    For more details about theme configuration read [here](#theme-configuration).
 
     
     **Note**: The andIsDev parameter must be changed to false before submitting the app to production. 
@@ -113,7 +113,7 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
                theme:nil];
     ```
     
-    or, if you want to change default colors:
+    or, if you want to change the chat view appearance:
     
      ```objective
      NSDictionary *botPalette = @{"primaryColor1":"ff0000"};
@@ -125,7 +125,7 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
                     theme:theme];
     ```
     
-    For more details about theme configuration read [here](#theme-configuration)
+    For more details about theme configuration read [here](#theme-configuration).
     
     **Note**: The andIsDev parameter must be changed to false before submitting the app to production.
     
