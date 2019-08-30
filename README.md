@@ -107,7 +107,9 @@ The [samples](https://github.com/GYANTINC/gyant-ios-sdk-samples) included with t
 
 ## Theme Configuration
 
-To allow a more seamless integration into existing apps the SDK supports custom themes. Currently, two themes are available: bot and provider. For each theme the following RGB colours could be customized:
+To allow a more seamless integration into existing apps, the SDK supports color customization. Currently, two different palletes are available: bot and provider. The bot palette is used during chat bot conversations while the provider will be loaded when the user is talking to a human (doctor, nurse, etc).
+
+For each palette the following RGB colors could be customized:
 
 <table>
   <tr>
