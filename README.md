@@ -115,7 +115,7 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     
     or, if you want to change default colors:
     
-     ```swift
+     ```objective
      NSDictionary *botPalette = @{"primaryColor1":"ff0000"};
      NSDictionary *providerPalette = @{"primaryColor1":"00ff00"};
      NSDictionary *theme = @{"bot": botPalette, "provider": providerPalette};
