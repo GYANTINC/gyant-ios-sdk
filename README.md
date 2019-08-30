@@ -162,7 +162,7 @@ To allow a more seamless integration into existing apps the SDK supports custom 
     <td>secondaryColor4</td>
     <td>Provider bubble background color</td>
     <td>ffff79c7</td>
-    <td><br>ff62849e</td>
+    <td>ff62849e</td>
   </tr>
   <tr>
     <td>extraColor1</td>
@@ -173,7 +173,7 @@ To allow a more seamless integration into existing apps the SDK supports custom 
   <tr>
     <td>extraColor2</td>
     <td>Card subtitle text color</td>
-    <td><br>ff767676</td>
+    <td>ff767676</td>
     <td>ff767676</td>
   </tr>
   <tr>
