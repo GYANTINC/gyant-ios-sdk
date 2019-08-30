@@ -3,6 +3,7 @@ Gyant iOS SDK
 
 ![Logo](https://gyant.com/wp-content/uploads/2018/10/Gyant.Logotype.HorizontalLeft@2x-1.png)
 
+
 # About
 
 GYANT combines messaging, AI, and medical experts to radically improve the diagnosis and treatment of non-urgent conditions. GYANT makes treatment faster, more effective & more delightful. Our purpose is to transform healthcare from the outside in — to create a new care standard for everyone.
@@ -108,20 +109,91 @@ The [samples](https://github.com/GYANTINC/gyant-ios-sdk-samples) included with t
 
 To allow a more seamless integration into existing apps the SDK supports custom themes. Currently, two themes are available: bot and provider. For each theme the following RGB colours could be customized:
 
-| Name            	| Description                                                                                                                                                                                           	| bot       	| provider  	|
-|-----------------	|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|-----------	|-----------	|
-|  primaryColor1  	| - Background color - Auto-complete matches highlight text color - Hyperlink text color                                                                                                                	| 4cb9f7  	| 1f5075  	|
-| primaryColor2   	| - Clinic and Provider cards text color                                                                                                                                                                	| 3ea9f5  	| 3ea9f5  	|
-| primaryColor3   	| n/a                                                                                                                                                                                                   	|           	|           	|
-| primaryColor4   	| - QuickResponses bubble background color - Input box background color - User bubble background color                                                                                                  	| 79c7ff  	| 296a9c  	|
-| secondaryColor1 	| - Auto-complete list background color - Connecting indicator background color - Scroll to bottom button icon color - Send button enabled icon color - Input box cursor color - Undo button icon color 	| ffffffff  	| ffffffff  	|
-| secondaryColor2 	| - Success notification background color                                                                                                                                                               	| 4cd964  	| 4cd964  	|
-| secondaryColor3 	| - Error notification background color                                                                                                                                                                 	| f55040  	| f55040  	|
-| secondaryColor4 	| - Provider bubble background color                                                                                                                                                                    	| ff79c7  	|  62849e 	|
-| extraColor1     	| - Card title text color - Connecting indicator text color - Auto-complete non-matches text color                                                                                                      	| 13324a  	| 0f77c6  	|
-| extraColor2     	| - Card subtitle text color                                                                                                                                                                            	|  767676 	| 767676  	|
-| extraColor3     	| - Send button disabled icon color                                                                                                                                                                     	| aaaaaa  	| aaaaaa  	|
-| extraColor4     	| n/a                                                                                                                                                                                                   	|           	|           	|
-| extraColor5     	| - Scroll to bottom button background color - Send button background color                                                                                                                             	| 13324a  	| 13324a  	|
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>bot</th>
+    <th>provider</th>
+  </tr>
+  <tr>
+    <td>primaryColor1</td>
+    <td><ul><li><Background color</li><li>Auto-complete matches highlight text color</li><li>Hyperlink text color</li></ul></td>
+    <td>ff4cb9f7</td>
+    <td>ff1f5075</td>
+  </tr>
+  <tr>
+    <td>primaryColor2</td>
+    <td>Clinic and Provider cards text color</td>
+    <td>ff3ea9f5</td>
+    <td>ff3ea9f5</td>
+  </tr>
+  <tr>
+    <td>primaryColor3</td>
+    <td>n/a</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>primaryColor4</td>
+   <td><ul><li>QuickResponses bubble background color</li><li>Input box background color</li><li>User bubble background color</li></td>
+    <td>ff79c7ff</td>
+    <td>ff296a9c</td>
+  </tr>
+  <tr>
+    <td>secondaryColor1</td>
+    <td><ul><li>Auto-complete list background color</li><li>Connecting indicator background color</li><li>Scroll to bottom button icon color</li><li>Send button enabled icon color</li><li>Input box cursor color</li><li>Undo button icon color</li></ul></td>
+    <td>ffffffff</td>
+    <td>ffffffff</td>
+  </tr>
+  <tr>
+    <td>secondaryColor2</td>
+    <td>Success notification background color</td>
+    <td>ff4cd964</td>
+    <td>ff4cd964</td>
+  </tr>
+  <tr>
+    <td>secondaryColor3</td>
+    <td>Error notification background color</td>
+    <td>fff55040</td>
+    <td>fff55040</td>
+  </tr>
+  <tr>
+    <td>secondaryColor4</td>
+    <td>Provider bubble background color</td>
+    <td>ffff79c7</td>
+    <td><br>ff62849e<br></td>
+  </tr>
+  <tr>
+    <td>extraColor1</td>
+    <td><ul><li>Card title text color</li><li>Connecting indicator text color</li><li>Auto-complete non-matches text color</li></ul></td>
+    <td>ff13324a</td>
+    <td>ff0f77c6</td>
+  </tr>
+  <tr>
+    <td>extraColor2</td>
+    <td>Card subtitle text color</td>
+    <td><br>ff767676<br></td>
+    <td>ff767676</td>
+  </tr>
+  <tr>
+    <td>extraColor3</td>
+    <td>Send button disabled icon color</td>
+    <td>ffaaaaaa</td>
+    <td>ffaaaaaa</td>
+  </tr>
+  <tr>
+    <td>extraColor4</td>
+    <td>n/a</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>extraColor5</td>
+    <td>Scroll to bottom button background color<br>- Send button background color</td>
+    <td>ff13324a</td>
+    <td>ff13324a</td>
+  </tr>
+</table>
 
 **Copyright © 2019 GYANT.com, Inc. All rights reserved.**
