@@ -68,8 +68,8 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     ```swift
     GyantChat.start(withClientID: "<YOUR-CLIENT-ID>",
                     patientID: "<YOUR-PATIENT-ID-OPTIONAL>",
-                    isDev: true,
-                    theme: nil)
+                    theme: nil,
+                    isDev: true)
     ```
     
     or, if you want to change the chat view appearance:
@@ -109,8 +109,8 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     ```objective-c
     [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>"
                patientID:@"<YOUR-PATIENT-ID-OPTIONAL>"
-               isDev:YES
-               theme:nil];
+               theme:nil
+               isDev:YES];
     ```
     
     or, if you want to change the chat view appearance:
@@ -121,8 +121,8 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
      NSDictionary *theme = @{"bot": botPalette, "provider": providerPalette};
      [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>"
                     patientID:@"<YOUR-PATIENT-ID-OPTIONAL>"
-                    isDev:YES
-                    theme:theme];
+                    theme:theme
+                    isDev:YES];
     ```
     
     For more details about theme configuration read [here](#theme-configuration).
