@@ -118,7 +118,7 @@ To allow a more seamless integration into existing apps the SDK supports custom 
   </tr>
   <tr>
     <td>primaryColor1</td>
-    <td><ul><li><Background color</li><li>Auto-complete matches highlight text color</li><li>Hyperlink text color</li></ul></td>
+    <td><ul><li>Background color</li><li>Auto-complete matches highlight text color</li><li>Hyperlink text color</li></ul></td>
     <td>ff4cb9f7</td>
     <td>ff1f5075</td>
   </tr>
@@ -190,7 +190,7 @@ To allow a more seamless integration into existing apps the SDK supports custom 
   </tr>
   <tr>
     <td>extraColor5</td>
-    <td>Scroll to bottom button background color<br>- Send button background color</td>
+   <td><ul><li>Scroll to bottom button background color</li><li>Send button background color</li></td>
     <td>ff13324a</td>
     <td>ff13324a</td>
   </tr>
