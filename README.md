@@ -66,8 +66,26 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
 2. Start the SDK by adding the following code snippet in the `application:didFinishLaunchingWithOptions:` application delegate method.
 
     ```swift
-    GyantChat.start(withClientID: "<YOUR-CLIENT-ID>", patientID: "<YOUR-PATIENT-ID-OPTIONAL>", isDev: true, theme: nil)
+    GyantChat.start(withClientID: "<YOUR-CLIENT-ID>",
+                    patientID: "<YOUR-PATIENT-ID-OPTIONAL>",
+                    isDev: true,
+                    theme: nil)
     ```
+    
+    or, if you want to change default colors:
+    
+     ```swift
+     let botPalette = ["primaryColor1":"ff0000"]
+     let providerPalette = ["primaryColor1":"00ff00"]
+     let theme = ["bot": botPalette, "provider": providerPalette]
+     GyantChat.start(withClientID: "hf-fd",
+                     patientID: nil,
+                     theme: theme,
+                     isDev: true)
+    ```
+    
+    For more details about theme configuration read [here](#theme-configuration)
+
     
     **Note**: The andIsDev parameter must be changed to false before submitting the app to production. 
         
@@ -89,8 +107,25 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
 2. Start the SDK by adding the following code snippet in the `application:didFinishLaunchingWithOptions:` application delegate method.
 
     ```objective-c
-    [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>" patientID:@"<YOUR-PATIENT-ID-OPTIONAL>" isDev:YES theme:@{}];
+    [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>"
+               patientID:@"<YOUR-PATIENT-ID-OPTIONAL>"
+               isDev:YES
+               theme:nil];
     ```
+    
+    or, if you want to change default colors:
+    
+     ```swift
+     NSDictionary *botPalette = @{"primaryColor1":"ff0000"};
+     NSDictionary *providerPalette = @{"primaryColor1":"00ff00"};
+     NSDictionary *theme = @{"bot": botPalette, "provider": providerPalette};
+     [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>"
+                    patientID:@"<YOUR-PATIENT-ID-OPTIONAL>"
+                    isDev:YES
+                    theme:theme];
+    ```
+    
+    For more details about theme configuration read [here](#theme-configuration)
     
     **Note**: The andIsDev parameter must be changed to false before submitting the app to production.
     
