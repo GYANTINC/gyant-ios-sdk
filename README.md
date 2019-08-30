@@ -198,7 +198,7 @@ For each palette the following RGB colors could be customized:
   <tr>
     <td>secondaryColor4</td>
     <td>Provider bubble background color</td>
-    <td>ffff79c7</td>
+    <td>ff62849e</td>
     <td>ff62849e</td>
   </tr>
   <tr>
