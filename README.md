@@ -95,6 +95,29 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     let chatVC = GyantChat.createChatViewController()!
     self.present(chatVC, animated: true, completion: nil)
     ```
+4. [Optional] GyantChatDelegate
+
+   Set the delegate.
+
+    ```swift
+    GyantChat.setDelegate(self)
+    ```
+
+    Implement push notifications registration method. This method is called when during the flow the bot asks the user to enable push notifications. Depending on the existing app requirements this can just retrieve the already registered token or trigger the complete iOS registration process.
+    
+    ```swift
+    func gyantRegister(forNotifications completion: @escaping TokenCompletionHandler) {
+        completion("<DEVICE-TOKEN>")
+    }
+    ```
+    
+    This method is called for every message received from the server. The _message_ parameter could be empty for special messages like carousels, images, etc.
+    
+    ```swift
+    func gyantDidReceiveMessage(_ message: String) {
+        // Your code here
+    }
+    ```
 
 ## Getting Started with Objective-C
 
