@@ -138,7 +138,7 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     
     or, if you want to change the chat view appearance:
     
-     ```objective
+     ```objective-c
      NSDictionary *botPalette = @{"primaryColor1":"ff0000"};
      NSDictionary *providerPalette = @{"primaryColor1":"00ff00"};
      NSDictionary *theme = @{"bot": botPalette, "provider": providerPalette};
@@ -154,11 +154,34 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     
 3. Present the chat view by adding the following code snipped.
 
-    ```objetive-c
+    ```objective-c
     UIViewController *chatVC = [GyantChat createChatViewController];
     [self presentViewController:chatVC animated:true completion:nil];
     ```
+4. [Optional] GyantChatDelegate
 
+   Set the delegate.
+
+    ```objective-c
+    [GyantChat setDelegate:self];
+    ```
+
+    Implement push notifications registration method. This method is called when during the flow the bot asks the user to enable push notifications. Depending on the existing app requirements this can just retrieve the already registered token or trigger the complete iOS registration process.
+    
+    ```objective-c
+    - (void) gyantRegisterForNotifications:(TokenCompletionHandler)completion {
+        completion("<DEVICE-TOKEN>")
+    }
+    ```
+    
+    This method is called for every message received from the server. The _message_ parameter could be empty for special messages like carousels, images, etc.
+    
+    ```objective-c
+    - (void) gyantDidReceiveMessage:(NSString *)message {
+        // Your code here
+    }
+    ```
+    
 ## Include the SDK for iOS in an Existing Application
 
 The [samples](https://github.com/GYANTINC/gyant-ios-sdk-samples) included with the SDK for iOS are standalone projects that are already set up for you. You can also integrate the SDK for iOS with your own existing project.
