@@ -2,7 +2,6 @@ Gyant iOS SDK
 ==================
 
 ![Logo](https://gyant.com/wp-content/uploads/2018/10/Gyant.Logotype.HorizontalLeft@2x-1.png)
-[![Build Status - Cirrus][]][Build status]
 
 ![release](https://img.shields.io/github/v/release/GYANTINC/gyant-ios-sdk)
 
