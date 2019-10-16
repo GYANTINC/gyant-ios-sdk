@@ -1,4 +1,4 @@
-https://img.shields.io/github/v/release/GYANTINC/gyant-ios-sdk
+!(https://img.shields.io/github/v/release/GYANTINC/gyant-ios-sdk)
 
 Gyant iOS SDK
 ==================
