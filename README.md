@@ -10,7 +10,7 @@ GYANT combines messaging, AI, and medical experts to radically improve the diagn
 
 # Requirements
  - iOS 10+
- - Xcode 10.2.1+
+ - Xcode 11.2.1+
 
 # Setup using CocoaPods 
 
@@ -32,7 +32,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 Add GyantChatSDK pod to your app target.
 
 ```
-pod 'GyantChatSDK', '~> 1.0.6'
+pod 'GyantChatSDK', '~> 1.0.9'
 ```
 
 Install the pod.
@@ -96,6 +96,14 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     self.present(chatVC, animated: true, completion: nil)
     ```
 
+4. (Optional) Change the patient ID after initializing the SDK.
+
+  ```swift
+  GyantChat.changePatientID("<YOUR-NEW-PATIENT-ID-OPTIONAL>")
+  ```
+
+  **Note**: If the patient ID is changed the sdk will start a new conversation and lose the last conversation's history.
+
 ## Getting Started with Objective-C
 
 1. Import the GyantChatSDK framework in the application delegate.
@@ -135,6 +143,14 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     UIViewController *chatVC = [GyantChat createChatViewController];
     [self presentViewController:chatVC animated:true completion:nil];
     ```
+
+4. (Optional) Change the patient ID after initializing the SDK.
+
+  ```objetive-c
+  [GyantChat changePatientID:@"<YOUR-NEW-PATIENT-ID-OPTIONAL>"];
+  ```
+
+  **Note**: If the patient ID is changed the sdk will start a new conversation and lose the last conversation's history.
 
 ## Include the SDK for iOS in an Existing Application
 
