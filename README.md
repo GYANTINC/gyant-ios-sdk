@@ -3,6 +3,7 @@ Gyant iOS SDK
 
 ![Logo](https://gyant.com/wp-content/uploads/2018/10/Gyant.Logotype.HorizontalLeft@2x-1.png)
 
+![release](https://img.shields.io/github/v/release/GYANTINC/gyant-ios-sdk)
 
 # About
 
@@ -32,7 +33,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 Add GyantChatSDK pod to your app target.
 
 ```
+<<<<<<< HEAD
 pod 'GyantChatSDK', '~> 1.0.9'
+=======
+pod 'GyantChatSDK', '~> 1.0.8'
+>>>>>>> master
 ```
 
 Install the pod.
@@ -68,8 +73,8 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     ```swift
     GyantChat.start(withClientID: "<YOUR-CLIENT-ID>",
                     patientID: "<YOUR-PATIENT-ID-OPTIONAL>",
-                    isDev: true,
-                    theme: nil)
+                    theme: nil,
+                    isDev: true)
     ```
     
     or, if you want to change the chat view appearance:
@@ -95,8 +100,31 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     let chatVC = GyantChat.createChatViewController()!
     self.present(chatVC, animated: true, completion: nil)
     ```
+4. [Optional] GyantChatDelegate
 
-4. (Optional) Change the patient ID after initializing the SDK.
+   Set the delegate.
+
+    ```swift
+    GyantChat.setDelegate(self)
+    ```
+
+    Implement push notifications registration method. This method is called when during the flow the bot asks the user to enable push notifications. Depending on the existing app requirements this can just retrieve the already registered token or trigger the complete iOS registration process.
+    
+    ```swift
+    func gyantRegister(forNotifications completion: @escaping TokenCompletionHandler) {
+        completion("<DEVICE-TOKEN>")
+    }
+    ```
+    
+    This method is called for every message received from the server. The _message_ parameter could be empty for special messages like carousels, images, etc.
+    
+    ```swift
+    func gyantDidReceiveMessage(_ message: String) {
+        // Your code here
+    }
+    ```
+
+5. (Optional) Change the patient ID after initializing the SDK.
 
   ```swift
   GyantChat.changePatientID("<YOUR-NEW-PATIENT-ID-OPTIONAL>")
@@ -117,20 +145,20 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     ```objective-c
     [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>"
                patientID:@"<YOUR-PATIENT-ID-OPTIONAL>"
-               isDev:YES
-               theme:nil];
+               theme:nil
+               isDev:YES];
     ```
     
     or, if you want to change the chat view appearance:
     
-     ```objective
+     ```objective-c
      NSDictionary *botPalette = @{"primaryColor1":"ff0000"};
      NSDictionary *providerPalette = @{"primaryColor1":"00ff00"};
      NSDictionary *theme = @{"bot": botPalette, "provider": providerPalette};
      [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>"
                     patientID:@"<YOUR-PATIENT-ID-OPTIONAL>"
-                    isDev:YES
-                    theme:theme];
+                    theme:theme
+                    isDev:YES];
     ```
     
     For more details about theme configuration read [here](#theme-configuration).
@@ -139,12 +167,35 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     
 3. Present the chat view by adding the following code snipped.
 
-    ```objetive-c
+    ```objective-c
     UIViewController *chatVC = [GyantChat createChatViewController];
     [self presentViewController:chatVC animated:true completion:nil];
     ```
+4. [Optional] GyantChatDelegate
 
-4. (Optional) Change the patient ID after initializing the SDK.
+  Set the delegate.
+
+    ```objective-c
+    [GyantChat setDelegate:self];
+    ```
+
+    Implement push notifications registration method. This method is called when during the flow the bot asks the user to enable push notifications. Depending on the existing app requirements this can just retrieve the already registered token or trigger the complete iOS registration process.
+    
+    ```objective-c
+    - (void) gyantRegisterForNotifications:(TokenCompletionHandler)completion {
+        completion("<DEVICE-TOKEN>")
+    }
+    ```
+    
+    This method is called for every message received from the server. The _message_ parameter could be empty for special messages like carousels, images, etc.
+    
+    ```objective-c
+    - (void) gyantDidReceiveMessage:(NSString *)message {
+        // Your code here
+    }
+    ```
+
+5. (Optional) Change the patient ID after initializing the SDK.
 
   ```objetive-c
   [GyantChat changePatientID:@"<YOUR-NEW-PATIENT-ID-OPTIONAL>"];
@@ -219,7 +270,7 @@ For each palette the following RGB colors could be customized:
   </tr>
   <tr>
     <td>extraColor1</td>
-    <td><ul><li>Card title text color</li><li>Connecting indicator text color</li><li>Auto-complete non-matches text color</li></ul></td>
+    <td><ul><li>Card title text color</li><li>Connecting indicator text color</li><li>Auto-complete non-matches text color</li><li>Provider avatar placeholder initials text color</li></ul></td>
     <td>ff13324a</td>
     <td>ff0f77c6</td>
   </tr>
@@ -237,7 +288,7 @@ For each palette the following RGB colors could be customized:
   </tr>
   <tr>
     <td>extraColor4</td>
-    <td>n/a</td>
+    <td>Provider avatar placeholder background color.</td>
     <td></td>
     <td></td>
   </tr>
