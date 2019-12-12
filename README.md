@@ -33,11 +33,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 Add GyantChatSDK pod to your app target.
 
 ```
-<<<<<<< HEAD
-pod 'GyantChatSDK', '~> 1.0.9'
-=======
-pod 'GyantChatSDK', '~> 1.0.8'
->>>>>>> master
+pod 'GyantChatSDK', '~> 1.1.0'
 ```
 
 Install the pod.
@@ -72,25 +68,44 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
 
     ```swift
     GyantChat.start(withClientID: "<YOUR-CLIENT-ID>",
-                    patientID: "<YOUR-PATIENT-ID-OPTIONAL>",
+                    patientData: nil,
                     theme: nil,
                     isDev: true)
     ```
     
-    or, if you want to change the chat view appearance:
+    To change the chat view appearance:
     
      ```swift
      let botPalette = ["primaryColor1":"ff0000"]
      let providerPalette = ["primaryColor1":"00ff00"]
      let theme = ["bot": botPalette, "provider": providerPalette]
      GyantChat.start(withClientID: "hf-fd",
-                     patientID: nil,
+                     patientData: nil,
                      theme: theme,
                      isDev: true)
     ```
     
     For more details about theme configuration read [here](#theme-configuration).
 
+    
+    To provide additional patient information:
+    
+     ```swift
+     let patientData = GyantChatPatientData()
+     patientData.patientId = "1234"
+     patientData.gender = "male"
+     patientData.visitReason = "fever"
+     patientData.dateOfBirth = "2001-03-26T20:28:32.383+0000"
+     patientData.phone = "1112223333"
+     patientData.name = "Joe Doe"
+     patientData.firstName = "Joe"
+     patientData.lastName = "Doe"
+     
+     GyantChat.start(withClientID: "hf-fd",
+                     patientData: patientData,
+                     theme: nil,
+                     isDev: true)
+    ```
     
     **Note**: The andIsDev parameter must be changed to false before submitting the app to production. 
         
@@ -144,24 +159,43 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
 
     ```objective-c
     [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>"
-               patientID:@"<YOUR-PATIENT-ID-OPTIONAL>"
+               patientData:nil
                theme:nil
                isDev:YES];
     ```
     
-    or, if you want to change the chat view appearance:
+    To change the chat view appearance:
     
      ```objective-c
      NSDictionary *botPalette = @{"primaryColor1":"ff0000"};
      NSDictionary *providerPalette = @{"primaryColor1":"00ff00"};
      NSDictionary *theme = @{"bot": botPalette, "provider": providerPalette};
      [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>"
-                    patientID:@"<YOUR-PATIENT-ID-OPTIONAL>"
+                    patientData:nil
                     theme:theme
                     isDev:YES];
     ```
     
     For more details about theme configuration read [here](#theme-configuration).
+    
+    To provide additional patient information:
+    
+     ```objective-c
+     GyantChatPatientData *patientData = [GyantChatPatientData new];
+     patientData.patientId = @"<YOUR-PATIENT-ID-OPTIONAL>";
+     patientData.gender = @"male";
+     patientData.visitReason = @"fever";
+     patientData.dateOfBirth = @"2001-03-26T20:28:32.383+0000";
+     patientData.phone = @"1112223333";
+     patientData.name = @"Joe Doe";
+     patientData.firstName = @"Joe";
+     patientData.lastName = @"Doe";
+     
+     [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>"
+                    patientData:patientData
+                    theme:theme
+                    isDev:YES];
+    ```
     
     **Note**: The andIsDev parameter must be changed to false before submitting the app to production.
     
