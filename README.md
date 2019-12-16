@@ -101,7 +101,7 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
      patientData.firstName = "Joe"
      patientData.lastName = "Doe"
      
-     GyantChat.start(withClientID: "hf-fd",
+     GyantChat.start(withClientID: "<YOUR-CLIENT-ID>",
                      patientData: patientData,
                      theme: nil,
                      isDev: true)
