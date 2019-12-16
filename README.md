@@ -33,11 +33,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 Add GyantChatSDK pod to your app target.
 
 ```
-<<<<<<< HEAD
-pod 'GyantChatSDK', '~> 1.0.9'
-=======
-pod 'GyantChatSDK', '~> 1.0.8'
->>>>>>> master
+pod 'GyantChatSDK', '~> 1.1.0'
 ```
 
 Install the pod.
@@ -72,25 +68,40 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
 
     ```swift
     GyantChat.start(withClientID: "<YOUR-CLIENT-ID>",
-                    patientID: "<YOUR-PATIENT-ID-OPTIONAL>",
+                    patientData: nil,
                     theme: nil,
                     isDev: true)
     ```
     
-    or, if you want to change the chat view appearance:
+    To change the chat view appearance:
     
      ```swift
      let botPalette = ["primaryColor1":"ff0000"]
      let providerPalette = ["primaryColor1":"00ff00"]
      let theme = ["bot": botPalette, "provider": providerPalette]
-     GyantChat.start(withClientID: "hf-fd",
-                     patientID: nil,
+     GyantChat.start(withClientID: "<YOUR-CLIENT-ID>",
+                     patientData: nil,
                      theme: theme,
                      isDev: true)
     ```
     
     For more details about theme configuration read [here](#theme-configuration).
 
+    
+    To provide additional patient information:
+    
+     ```swift
+     let patientData = GyantChatPatientData()
+     patientData.patientId = "<YOUR-PATIENT-ID>"
+     patientData.gender = "male" // male or female
+     patientData.visitReason = "fever"
+     patientData.dateOfBirth = "2001-03-26T20:28:32.383+0000"
+     
+     GyantChat.start(withClientID: "<YOUR-CLIENT-ID>",
+                     patientData: patientData,
+                     theme: nil,
+                     isDev: true)
+    ```
     
     **Note**: The andIsDev parameter must be changed to false before submitting the app to production. 
         
@@ -123,85 +134,22 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
         // Your code here
     }
     ```
-
-5. (Optional) Change the patient ID after initializing the SDK.
-
-  ```swift
-  GyantChat.changePatientID("<YOUR-NEW-PATIENT-ID-OPTIONAL>")
-  ```
-
-  **Note**: If the patient ID is changed the sdk will start a new conversation and lose the last conversation's history.
-
-## Getting Started with Objective-C
-
-1. Import the GyantChatSDK framework in the application delegate.
-
-    ```objective-c
-    #import <GyantChatSDK/GyantChatSDK.h>
-    ```
-
-2. Start the SDK by adding the following code snippet in the `application:didFinishLaunchingWithOptions:` application delegate method.
-
-    ```objective-c
-    [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>"
-               patientID:@"<YOUR-PATIENT-ID-OPTIONAL>"
-               theme:nil
-               isDev:YES];
-    ```
     
-    or, if you want to change the chat view appearance:
+    This method is called for every new diagnosis from the server. The _diagnosis_ parameter will contain the all the diagnosis information.
     
-     ```objective-c
-     NSDictionary *botPalette = @{"primaryColor1":"ff0000"};
-     NSDictionary *providerPalette = @{"primaryColor1":"00ff00"};
-     NSDictionary *theme = @{"bot": botPalette, "provider": providerPalette};
-     [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>"
-                    patientID:@"<YOUR-PATIENT-ID-OPTIONAL>"
-                    theme:theme
-                    isDev:YES];
-    ```
-    
-    For more details about theme configuration read [here](#theme-configuration).
-    
-    **Note**: The andIsDev parameter must be changed to false before submitting the app to production.
-    
-3. Present the chat view by adding the following code snipped.
-
-    ```objective-c
-    UIViewController *chatVC = [GyantChat createChatViewController];
-    [self presentViewController:chatVC animated:true completion:nil];
-    ```
-4. [Optional] GyantChatDelegate
-
-  Set the delegate.
-
-    ```objective-c
-    [GyantChat setDelegate:self];
-    ```
-
-    Implement push notifications registration method. This method is called when during the flow the bot asks the user to enable push notifications. Depending on the existing app requirements this can just retrieve the already registered token or trigger the complete iOS registration process.
-    
-    ```objective-c
-    - (void) gyantRegisterForNotifications:(TokenCompletionHandler)completion {
-        completion("<DEVICE-TOKEN>")
-    }
-    ```
-    
-    This method is called for every message received from the server. The _message_ parameter could be empty for special messages like carousels, images, etc.
-    
-    ```objective-c
-    - (void) gyantDidReceiveMessage:(NSString *)message {
+    ```swift
+    func gyantDidReceiveDiagnosis(_ diagnosis: [AnyHashable : Any]) {
         // Your code here
     }
     ```
 
-5. (Optional) Change the patient ID after initializing the SDK.
+5. (Optional) Change the patient data after initializing the SDK.
 
-  ```objetive-c
-  [GyantChat changePatientID:@"<YOUR-NEW-PATIENT-ID-OPTIONAL>"];
+  ```swift
+  GyantChat.changePatientData(...)
   ```
 
-  **Note**: If the patient ID is changed the sdk will start a new conversation and lose the last conversation's history.
+  **Note**: When the patient data is changed the sdk will start a new conversation and lose the last conversation's history.
 
 ## Include the SDK for iOS in an Existing Application
 
