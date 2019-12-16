@@ -209,34 +209,34 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
 4. [Optional] GyantChatDelegate
 
   Set the delegate.
+  
+```objective-c
+[GyantChat setDelegate:self];
+```
 
-    objective-c
-    [GyantChat setDelegate:self];
+Implement push notifications registration method. This method is called when during the flow the bot asks the user to enable push notifications. Depending on the existing app requirements this can just retrieve the already registered token or trigger the complete iOS registration process.
     
+    ```objective-c
+       - (void) gyantRegisterForNotifications:(TokenCompletionHandler)completion {
+           completion("<DEVICE-TOKEN>")
+       }
+    ```    
+
+This method is called for every message received from the server. The _message_ parameter could be empty for special messages like carousels, images, etc.
     
-    Implement push notifications registration method. This method is called when during the flow the bot asks the user to enable push notifications. Depending on the existing app requirements this can just retrieve the already registered token or trigger the complete iOS registration process.
-    
-    objective-c
-    - (void) gyantRegisterForNotifications:(TokenCompletionHandler)completion {
-        completion("<DEVICE-TOKEN>")
-    }
-    
-    
-    This method is called for every message received from the server. The _message_ parameter could be empty for special messages like carousels, images, etc.
-    
-    objective-c
+    ```objective-c
     - (void) gyantDidReceiveMessage:(NSString *)message {
         // Your code here
     }
+    ```
+
+This method is called for every new diagnosis from the server. The _diagnosis_ parameter will contain the all the diagnosis information.
     
-    
-    This method is called for every new diagnosis from the server. The _diagnosis_ parameter will contain the all the diagnosis information.
-    
-    objective-c
+    ```objective-c
     - (void) gyantDidReceiveDiagnosis:(NSDictionary *)diagnosis {
         // Your code here
     }
-    
+    ```
 
 5. (Optional) Change the patient ID after initializing the SDK.
 
