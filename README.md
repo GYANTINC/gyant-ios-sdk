@@ -79,7 +79,7 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
      let botPalette = ["primaryColor1":"ff0000"]
      let providerPalette = ["primaryColor1":"00ff00"]
      let theme = ["bot": botPalette, "provider": providerPalette]
-     GyantChat.start(withClientID: "hf-fd",
+     GyantChat.start(withClientID: "<YOUR-CLIENT-ID>",
                      patientData: nil,
                      theme: theme,
                      isDev: true)
