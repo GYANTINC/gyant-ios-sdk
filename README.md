@@ -92,14 +92,10 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     
      ```swift
      let patientData = GyantChatPatientData()
-     patientData.patientId = "1234"
-     patientData.gender = "male"
+     patientData.patientId = "<YOUR-PATIENT-ID>"
+     patientData.gender = "male" // male or female
      patientData.visitReason = "fever"
      patientData.dateOfBirth = "2001-03-26T20:28:32.383+0000"
-     patientData.phone = "1112223333"
-     patientData.name = "Joe Doe"
-     patientData.firstName = "Joe"
-     patientData.lastName = "Doe"
      
      GyantChat.start(withClientID: "<YOUR-CLIENT-ID>",
                      patientData: patientData,
@@ -182,14 +178,10 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     
      ```objective-c
      GyantChatPatientData *patientData = [GyantChatPatientData new];
-     patientData.patientId = @"<YOUR-PATIENT-ID-OPTIONAL>";
-     patientData.gender = @"male";
+     patientData.patientId = @"<YOUR-PATIENT-ID>";
+     patientData.gender = @"male"; // male or female
      patientData.visitReason = @"fever";
      patientData.dateOfBirth = @"2001-03-26T20:28:32.383+0000";
-     patientData.phone = @"1112223333";
-     patientData.name = @"Joe Doe";
-     patientData.firstName = @"Joe";
-     patientData.lastName = @"Doe";
      
      [GyantChat startWithClientID:@"<YOUR-CLIENT-ID>"
                     patientData:patientData
