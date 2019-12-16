@@ -134,14 +134,22 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
         // Your code here
     }
     ```
+    
+    This method is called for every new diagnosis from the server. The _diagnosis_ parameter will contain the all the diagnosis information.
+    
+    ```swift
+    func gyantDidReceiveDiagnosis(_ diagnosis: [AnyHashable : Any]) {
+        // Your code here
+    }
+    ```
 
-5. (Optional) Change the patient ID after initializing the SDK.
+5. (Optional) Change the patient data after initializing the SDK.
 
   ```swift
-  GyantChat.changePatientID("<YOUR-NEW-PATIENT-ID-OPTIONAL>")
+  GyantChat.changePatientData(...)
   ```
 
-  **Note**: If the patient ID is changed the sdk will start a new conversation and lose the last conversation's history.
+  **Note**: When the patient data is changed the sdk will start a new conversation and lose the last conversation's history.
 
 ## Getting Started with Objective-C
 
@@ -220,14 +228,22 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
         // Your code here
     }
     ```
+    
+    This method is called for every new diagnosis from the server. The _diagnosis_ parameter will contain the all the diagnosis information.
+    
+    ```objective-c
+    - (void) gyantDidReceiveDiagnosis:(NSDictionary *)diagnosis {
+        // Your code here
+    }
+    ```
 
 5. (Optional) Change the patient ID after initializing the SDK.
 
   ```objetive-c
-  [GyantChat changePatientID:@"<YOUR-NEW-PATIENT-ID-OPTIONAL>"];
+  [GyantChat changePatientData:...];
   ```
 
-  **Note**: If the patient ID is changed the sdk will start a new conversation and lose the last conversation's history.
+  **Note**: When the patient data is changed the sdk will start a new conversation and lose the last conversation's history.
 
 ## Include the SDK for iOS in an Existing Application
 
