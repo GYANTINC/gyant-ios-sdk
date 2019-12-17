@@ -103,7 +103,7 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
                      isDev: true)
     ```
     
-    **Note**: The andIsDev parameter must be changed to false before submitting the app to production. 
+    **Note**: The __isDev__ parameter must be changed to false before submitting the app to production. 
         
 3. Present the chat view by adding the following code snipped in any view controller.
 
