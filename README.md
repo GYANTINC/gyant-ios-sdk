@@ -135,7 +135,7 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
     }
     ```
     
-    This method is called for every new diagnosis from the server. The _diagnosis_ parameter will contain the all the diagnosis information.
+    This method is called for every new diagnosis from the server. The _diagnosis_ parameter will contain the diagnosis information.
     
     ```swift
     func gyantDidReceiveDiagnosis(_ diagnosis: [AnyHashable : Any]) {
