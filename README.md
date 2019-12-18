@@ -149,7 +149,47 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
   GyantChat.changePatientData(...)
   ```
 
-  **Note**: When the patient data is changed the sdk will start a new conversation and lose the last conversation's history.
+All the fields available in GyantChatPatientData are optional. 
+
+<table>
+<tr>
+	<th>Field</th>
+	<th>Description</th>
+</tr>
+<tr>
+    <td>patientId</td>
+    <td>Patient ID on the client’s side and can be any string/format. Max. lenght is 4096</td>
+</tr>
+<tr>
+	<td>name</td>
+    <td>Patient full name</td>
+</tr>
+<tr>
+	<td>firstName</td>
+    <td>Patient first name</td>
+</tr>
+<tr>
+	<td>lastName</td>
+    <td>Patient last name</td>
+</tr>
+<tr>
+	<td>gender</td>
+    <td>Patient gender, e.g: male or female.</td>
+</tr>
+<tr>
+	<td>phone</td>
+    <td>Patient phone number</td>
+</tr>
+<tr>
+	<td>dateOfBirth</td>
+    <td>Patient date of birth. Can use UTC, e.g. 2019-03-26T20:28:32.383+0000</td>
+</tr>
+<tr>
+	<td>visitReason</td>
+    <td>Patient visit reason if known</td>
+</tr>
+</table>
+
 
 ## Include the SDK for iOS in an Existing Application
 
