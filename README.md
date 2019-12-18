@@ -145,9 +145,9 @@ Adding the NSLocationWhenInUseUsageDescription key in Info.plist is required to 
 
 5. (Optional) Change the patient data after initializing the SDK.
 
-  ```swift
-  GyantChat.changePatientData(...)
-  ```
+    ```swift
+    GyantChat.changePatientData(...)
+    ```
 
 All the fields available in GyantChatPatientData are optional. 
 
